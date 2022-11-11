@@ -1,6 +1,9 @@
 package com.github.liberatemetumortis;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -41,6 +44,7 @@ public class Main {
         System.out.println(girdi);
          */
 
+        /*
         try{
             int sayı = scanner.nextInt();
             System.out.println(sayı);
@@ -48,7 +52,33 @@ public class Main {
             System.out.println("Hata oluştu!");
         }
 
+         */
 
+        //String[] dizi = { "Selam", "Merhaba", "Nasılsın" };
+        ArrayList<String> dizi =
+                new ArrayList<>(Arrays.asList("Selam", "Merhaba", "Nasılsın"));
+        System.out.println(dizi);
+
+        dizi = dizi.stream().map(el -> el + " MetuMortis").collect(Collectors.toCollection(ArrayList::new));
+
+        System.out.println(dizi);
+
+        dizi.forEach(System.out::println);
+
+        for(String el : dizi){
+            System.out.println(el);
+        }
+
+
+        String str = "Selam MetuMortis";
+        System.out.println(str.toUpperCase());
+        System.out.println(str.toLowerCase());
+        System.out.println(str.replace("MetuMortis", "Java"));
+        System.out.println(str);
+        System.out.println(str.split(" ")[0]);
+
+        String asd = null;
+        System.out.println(asd.toUpperCase());
     }
     public static void kill(Person kişi) {
         System.out.println(kişi.getName() + " maalesef öldü.");
